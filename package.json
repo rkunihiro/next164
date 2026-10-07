@@ -1,0 +1,24 @@
+{
+    "name": "next164",
+    "version": "1.0.0",
+    "type": "module",
+    "imports": {
+        "#/*": ["./src/*"]
+    },
+    "dependencies": {
+        "next": "^16.3.8",
+        "react": "^19.3.0",
+        "react-dom": "^19.3.0",
+        "server-only": "^0.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "26.6.4",
+        "@types/react": "^19.3.0",
+        "@types/react-dom": "^19.3.0",
+        "typescript": "^7.0.2"
+    },
+    "scripts": {
+        "dev": "NODE_ENV=development next dev -p 3000",
+        "build": "NODE_ENV=production next build"
+    }
+}

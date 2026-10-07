@@ -1,0 +1,85 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        // "composite": true,
+        "tsBuildInfoFile": "./.tsbuildinfo",
+
+        "target": "esnext",
+        "lib": ["esnext", "dom", "dom.iterable"],
+        "jsx": "react-jsx",
+
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        // "rootDir": "./",
+        // "baseUrl": "./src",
+        // "paths": {},
+        // "rootDirs": [],
+        // "typeRoots": [],
+        // "types": [],
+        // "allowUmdGlobalAccess": true,
+        // "moduleSuffixes": [],
+        "allowImportingTsExtensions": true,
+        // "rewriteRelativeImportExtensions": true,
+        // "resolvePackageJsonExports": true,
+        // "resolvePackageJsonImports": true,
+        // "customConditions": [],
+        "noUncheckedSideEffectImports": true,
+        "resolveJsonModule": true,
+        // "allowArbitraryExtensions": true,
+        // "noResolve": true,
+
+        "allowJs": true,
+        // "checkJs": true,
+        // "maxNodeModuleJsDepth": 1,
+
+        "noEmit": true,
+
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        // "isolatedDeclarations": true,
+        "erasableSyntaxOnly": true,
+        // "allowSyntheticDefaultImports": false,
+        "esModuleInterop": true,
+        // "preserveSymlinks": true,
+        "forceConsistentCasingInFileNames": true,
+
+        "strict": true,
+        // "noImplicitAny": true,
+        // "strictNullChecks": true,
+        // "strictFunctionTypes": true,
+        // "strictBindCallApply": true,
+        // "strictPropertyInitialization": true,
+        // "strictBuiltinIteratorReturn": true,
+        // "noImplicitThis": true,
+        // "useUnknownInCatchVariables": true,
+        // "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "exactOptionalPropertyTypes": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUncheckedIndexedAccess": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "allowUnusedLabels": false,
+        "allowUnreachableCode": false,
+
+        // "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
+    },
+    "include": [
+        "next-env.d.ts",
+        ".next/types/**/*.ts",
+        ".next/dev/types/**/*.ts",
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
