@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
 
     poweredByHeader: false,
 
+    images: {
+        unoptimized: true,
+    },
+
     // productionBrowserSourceMaps: true,
     // reactCompiler: false,
     // reactProductionProfiling: false,
@@ -34,9 +38,15 @@ const nextConfig: NextConfig = {
             expire: 60,
         },
     },
+    partialPrefetching: true,
 
     agentRules: false,
     htmlLimitedBots: /.*/,
+
+    // サーバーサイドでバンドルせず Node.js ネイティブの require を利用させるパッケージ
+    serverExternalPackages: [
+        "better-sqlite3",
+    ],
 };
 
 export default nextConfig;

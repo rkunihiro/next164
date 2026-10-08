@@ -1,19 +1,26 @@
+import { randomUUID } from "node:crypto";
+
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export function proxy(request: NextRequest, event: NextFetchEvent) {
+export async function proxy(request: NextRequest, _event: NextFetchEvent) {
     const start = new Date();
     const url = request.nextUrl;
+    const transactionId = randomUUID();
 
-    const response = NextResponse.next();
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("transaction-id", transactionId);
+    const response = NextResponse.next({
+        request: { headers: requestHeaders },
+    });
+    response.headers.set("transaction-id", transactionId);
 
     console.log(JSON.stringify({
         timestamp: start.toISOString(),
         method: request.method,
         url: `${url.pathname}${url.search}`,
-        event,
+        transactionId,
         status: response.status,
-        duration: Date.now() - start.getTime(),
     }));
 
     return response;
@@ -21,6 +28,6 @@ export function proxy(request: NextRequest, event: NextFetchEvent) {
 
 export const config = {
     matcher: [
-        "/((?!_next|favicon.ico|sitemap.xml|robots.txt).*)",
+        `/((?!_next|favicon|icon|manifest|[^?]*\\.(?:css|json|js)).*)`,
     ],
 };
