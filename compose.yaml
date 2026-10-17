@@ -1,0 +1,20 @@
+services:
+  app:
+    container_name: next164-app
+    image: gcr.io/distroless/nodejs24-debian13:nonroot
+    environment:
+      ENV: local
+    networks:
+      - default
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./.next/standalone:/app
+      - ./.next/static:/app/.next/static
+      - ./public:/app/public
+    working_dir: /app
+    command: ["/app/server.js"]
+
+networks:
+  default:
+    name: next164-network-default

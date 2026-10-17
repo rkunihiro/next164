@@ -1,0 +1,30 @@
+{
+    "name": "next164",
+    "version": "1.0.0",
+    "type": "module",
+    "imports": {
+        "#/*": [
+            "./src/*"
+        ]
+    },
+    "dependencies": {
+        "better-sqlite3": "^13.0.3",
+        "next": "^16.4.2",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
+        "server-only": "^0.0.1"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.3.3",
+        "@types/better-sqlite3": "^9.6.0",
+        "@types/node": "26.6.5",
+        "@types/react": "^19.3.0",
+        "@types/react-dom": "^19.3.0",
+        "tailwindcss": "^4.3.3",
+        "typescript": "^7.0.2"
+    },
+    "scripts": {
+        "dev": "NODE_ENV=development next dev -p 3000",
+        "build": "NODE_ENV=production next build"
+    }
+}
